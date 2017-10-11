@@ -33,13 +33,16 @@
                                 <date key="date" timeIntervalSinceReferenceDate="529454232.710118">
                                     <!--2017-10-11 22:37:12 +0000-->
                                 </date>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="529326000">
-                                    <!--2017-10-10 11:00:00 +0000-->
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="504957600">
+                                    <!--2017-01-01 10:00:00 +0000-->
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg1-Sw-4G3">
-                                <rect key="frame" x="125" y="397" width="124" height="30"/>
+                                <rect key="frame" x="38" y="397" width="289" height="30"/>
                                 <state key="normal" title="Enviar Notificacao"/>
+                                <connections>
+                                    <action selector="fireNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qcB-Vg-cNK"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lc6-eI-Qlz">
                                 <rect key="frame" x="24" y="465" width="327" height="50"/>
@@ -55,7 +58,7 @@
                         <constraints>
                             <constraint firstItem="6Gb-7p-Lcn" firstAttribute="top" secondItem="uv5-Ab-h8g" secondAttribute="bottom" constant="29" id="63F-gc-euz"/>
                             <constraint firstItem="uv5-Ab-h8g" firstAttribute="trailing" secondItem="6Gb-7p-Lcn" secondAttribute="trailing" id="ALd-ve-oro"/>
-                            <constraint firstItem="xg1-Sw-4G3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="109" id="DX2-KJ-j9y"/>
+                            <constraint firstItem="xg1-Sw-4G3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="22" id="DX2-KJ-j9y"/>
                             <constraint firstItem="xg1-Sw-4G3" firstAttribute="top" secondItem="6Gb-7p-Lcn" secondAttribute="bottom" constant="30" id="Gg7-KH-UAS"/>
                             <constraint firstItem="uv5-Ab-h8g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Jwr-vI-rl3"/>
                             <constraint firstItem="uv5-Ab-h8g" firstAttribute="leading" secondItem="6Gb-7p-Lcn" secondAttribute="leading" id="f68-XT-kWi"/>
@@ -66,10 +69,15 @@
                             <constraint firstItem="6Gb-7p-Lcn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="skC-ox-uku"/>
                             <constraint firstItem="Lc6-eI-Qlz" firstAttribute="top" secondItem="xg1-Sw-4G3" secondAttribute="bottom" constant="38" id="sro-fn-53l"/>
                             <constraint firstItem="uv5-Ab-h8g" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="uWr-bk-dxs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xg1-Sw-4G3" secondAttribute="trailing" constant="110" id="y5T-Wa-VJk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xg1-Sw-4G3" secondAttribute="trailing" constant="32" id="y5T-Wa-VJk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bH3-o5-RiW"/>
+                    <connections>
+                        <outlet property="dpFireDate" destination="6Gb-7p-Lcn" id="CDg-ut-RjW"/>
+                        <outlet property="lbMessage" destination="Lc6-eI-Qlz" id="4LR-kj-AOy"/>
+                        <outlet property="tfMessage" destination="uv5-Ab-h8g" id="lWh-j3-Cui"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
