@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         //content.sound = UNNotificationSound(named: "arquivo-de-som.caf")
         content.categoryIdentifier = "Lembrete"
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         let request = UNNotificationRequest(identifier: "Lembrete", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
@@ -45,4 +45,16 @@ class ViewController: UIViewController {
     }
 
 }
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+
+
+
+
 

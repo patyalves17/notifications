@@ -17,7 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         center.delegate = self
-        
+        center.getNotificationSettings { (settings: UNNotificationSettings) in
+            if settings.authorizationStatus == .notDetermined {
+                let options: UNAuthorizationOptions = [.alert, .sound, .badge, .carPlay]
+                self.center.requestAuthorization(options: options, completionHandler: { (success: Bool, error: Error?   ) in
+                    if error == nil {
+                        print(success)
+                    }else{
+                        print(error!.localizedDescription)
+                    }
+                })
+            }else{
+                print("Usuário negou a Notification!!")
+            }
+        }
         
         return true
     }
@@ -50,10 +63,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: UNUserNotificationCenterDelegate{
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         print("--> willPresent Notification")
+        completionHandler([.alert, .sound])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print("--> didReceive Notification")
+        completionHandler()
     }
     
     
