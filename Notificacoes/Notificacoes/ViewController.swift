@@ -19,7 +19,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        NotificationCenter.default.addObserver(self, selector: #selector(onReceive(notification:)), name: NSNotification.Name(rawValue: "Received"), object: nil)
+    }
+    
+    func onReceive(notification: Notification){
+        print("onReceive")
+        if let message = notification.object as? String {
+            lbMessage.text = message
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,7 +47,9 @@ class ViewController: UIViewController {
         //content.sound = UNNotificationSound(named: "arquivo-de-som.caf")
         content.categoryIdentifier = "Lembrete"
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+//        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: dpFireDate.date)
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: "Lembrete", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         

@@ -14,6 +14,7 @@
 		ACA426861F8ED1570018AAD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA426841F8ED1570018AAD3 /* LaunchScreen.storyboard */; };
 		ACA426911F8ED1570018AAD3 /* NotificacoesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA426901F8ED1570018AAD3 /* NotificacoesTests.swift */; };
 		ACA4269C1F8ED1570018AAD3 /* NotificacoesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA4269B1F8ED1570018AAD3 /* NotificacoesUITests.swift */; };
+		ACA426AA1F8EF5860018AAD3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA426A91F8EF5860018AAD3 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		ACA426971F8ED1570018AAD3 /* NotificacoesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotificacoesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA4269B1F8ED1570018AAD3 /* NotificacoesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificacoesUITests.swift; sourceTree = "<group>"; };
 		ACA4269D1F8ED1570018AAD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACA426A91F8EF5860018AAD3 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "\U0013SecondViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				ACA4267B1F8ED1570018AAD3 /* AppDelegate.swift */,
 				ACA4267D1F8ED1570018AAD3 /* ViewController.swift */,
 				ACA4267F1F8ED1570018AAD3 /* Main.storyboard */,
+				ACA426A91F8EF5860018AAD3 /* SecondViewController.swift */,
 				ACA426821F8ED1570018AAD3 /* Assets.xcassets */,
 				ACA426841F8ED1570018AAD3 /* LaunchScreen.storyboard */,
 				ACA426871F8ED1570018AAD3 /* Info.plist */,
@@ -261,6 +264,7 @@
 			files = (
 				ACA4267E1F8ED1570018AAD3 /* ViewController.swift in Sources */,
 				ACA4267C1F8ED1570018AAD3 /* AppDelegate.swift in Sources */,
+				ACA426AA1F8EF5860018AAD3 /* SecondViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,6 +32,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        let confirmAction = UNNotificationAction(identifier: "Confirm", title: "Confirmar ", options: [.foreground])
+        let cancelAction = UNNotificationAction(identifier: "Cancel", title: "Cancelar ", options: [])
+        
+        let category = UNNotificationCategory(identifier: "Lembrete", actions: [confirmAction, cancelAction], intentIdentifiers: [], options: [.customDismissAction])
+        
+        center.setNotificationCategories([category])
+        
+        
+        
         return true
     }
 
@@ -68,6 +77,26 @@ extension AppDelegate: UNUserNotificationCenterDelegate{
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print("--> didReceive Notification")
+        
+        print("Mensagem: ", response.notification.request.content.body)
+        
+        switch response.actionIdentifier {
+        case "Confirm":
+                print("Clicou na confirmacao")
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Received") , object: response.notification.request.content.body, userInfo: nil)
+            
+            
+        case  "Cancel":
+             print("Clicou no cancelar")
+        case UNNotificationDefaultActionIdentifier:
+             print("Clicou na propria confirmacao")
+        case UNNotificationDismissActionIdentifier:
+             print("fez dismiss!!!")
+        default:
+            break
+        }
+        
+        
         completionHandler()
     }
     

@@ -75,7 +75,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="xg1-Sw-4G3" secondAttribute="trailing" constant="32" id="y5T-Wa-VJk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bH3-o5-RiW"/>
+                    <navigationItem key="navigationItem" id="bH3-o5-RiW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="adO-bp-dcr">
+                            <connections>
+                                <segue destination="YiJ-BO-a25" kind="show" id="XD1-H8-2On"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dpFireDate" destination="6Gb-7p-Lcn" id="CDg-ut-RjW"/>
                         <outlet property="lbMessage" destination="Lc6-eI-Qlz" id="4LR-kj-AOy"/>
@@ -85,6 +91,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="965.60000000000002" y="0.44977511244377816"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="txW-Xo-wdM">
+            <objects>
+                <viewController id="YiJ-BO-a25" customClass="_SecondViewController" customModule="Notificacoes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IeQ-Oy-9JK"/>
+                        <viewControllerLayoutGuide type="bottom" id="a1i-WX-tdw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c5y-q4-QoY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPr-BL-lbx">
+                                <rect key="frame" x="27" y="91" width="332" height="186"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="lbMessage" destination="UPr-BL-lbx" id="7qp-dj-q5a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z07-nU-DRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1820" y="-0.44977511244377816"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xsc-jk-vtD">
